@@ -188,7 +188,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 gaps inner 10
-gaps outer 10
+smart_gaps on
 
 exec firefox
 exec_always xset s off
