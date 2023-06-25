@@ -1,7 +1,7 @@
 # === Session defaults ===
 
 # reset border color in default mode
-:: default : yabai -m config active_window_border_color 0xE032CD32
+:: default : yabai -m config active_window_border_color 0xE02d74da
 
 
 # === launch commands ===
