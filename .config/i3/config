@@ -51,6 +51,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# open file manager
+bindsym $mod+n exec nautilus
+
 # kill focused window
 bindsym $mod+q kill
 
