@@ -1,0 +1,66 @@
+set nu
+set relativenumber
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set nowrap
+
+set noswapfile
+set nobackup
+
+set nohlsearch
+set incsearch
+
+set scrolloff=8
+set signcolumn=yes
+set isfname+=@-@
+
+set updatetime=50
+
+set colorcolumn=80
+
+let mapleader=" "
+
+nnoremap <leader>pv :Ex<CR>
+
+" move block of code
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" append line below to current line and keep cursor in place
+nnoremap J mzJ`z
+
+" keep cursor in the middle
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" greatest remap ever
+xnoremap <leader>p "_dP
+
+" system clipboard
+nnoremap <leader>y "+y
+vmap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+" deleting to void register
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" pycharm commands
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap <leader>pf :action GotoFile<CR>
+nnoremap <leader>ps :action FindInPath<CR>
+nnoremap <leader>vd :action ShowErrorDescription<CR>
+
+" harpoon plugin
+nnoremap <C-t> :action HarpoonerOpenFile0<cr>
+nnoremap <C-h> :action HarpoonerOpenFile1<cr>
+nnoremap <C-s> :action HarpoonerOpenFile2<cr>
+nnoremap <C-n> :action HarpoonerOpenFile3<cr>
+nnoremap <C-e> :action HarpoonerQuickMenu<cr>
+nnoremap <leader>a :action HarpoonerAddFile<cr>
