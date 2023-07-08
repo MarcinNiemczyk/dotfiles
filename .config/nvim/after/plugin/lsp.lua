@@ -3,7 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'pylsp',
+    'pylsp'
 })
 
 -- Fix Undefined global 'vim'
@@ -54,6 +54,7 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = false,
+    underline = false,
 })
 
