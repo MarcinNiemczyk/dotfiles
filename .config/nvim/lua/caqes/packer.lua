@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
 		  local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 		  ts_update()
 	  end}
+  use("nvim-treesitter/nvim-treesitter-context")
 
   use("theprimeagen/harpoon")
   use("mbbill/undotree")
