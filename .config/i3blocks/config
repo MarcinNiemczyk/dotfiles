@@ -1,0 +1,31 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[volume]
+command=$SCRIPT_DIR/volume/volume
+label=VOL
+interval=once
+color=#eb4034
+signal=10
+
+[memory]
+label=MEM
+command=$SCRIPT_DIR/memory/memory
+separator=false
+interval=30
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label=CPU
+interval=10
+min_width=CPU 100.00%
+
+[load_average]
+label=LOAD
+interval=10
+
+[time]
+color=#80ff80
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5

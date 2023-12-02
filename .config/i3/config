@@ -182,7 +182,8 @@ bindsym Mod4+Shift+space floating toggle
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+        separator_symbol " "
 }
 
 # Configure window borders
