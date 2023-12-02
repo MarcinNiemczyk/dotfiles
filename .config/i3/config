@@ -201,9 +201,12 @@ gaps inner 10
 smart_gaps on
 
 exec firefox
-exec_always xset s off
-exec_always xset -dpms
 exec_always xrandr --output DP-0 --mode 1920x1080 --rate 239.76
 exec_always setxkbmap pl
 exec_always setxkbmap -option caps:swapescape
+exec_always xinput set-prop 9 'libinput Accel Profile Enabled' 0, 1
+exec_always xinput set-prop 9 'libinput Accel Speed' 0.1
+exec_always xset s off
+exec_always xset -dpms
+exec_always xset r rate 200 30
 
