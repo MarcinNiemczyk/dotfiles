@@ -219,4 +219,5 @@ exec_always xinput set-prop 9 'libinput Accel Speed' 0.1
 exec_always xset s off
 exec_always xset -dpms
 exec_always xset r rate 200 30
+exec_always timedatectl set-local-rtc 1
 
