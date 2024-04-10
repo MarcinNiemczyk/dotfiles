@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
 	  end}
   use("nvim-treesitter/nvim-treesitter-context")
 
+  use "nvim-lua/plenary.nvim"
   use {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
