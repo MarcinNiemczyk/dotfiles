@@ -18,6 +18,10 @@ return {
         -- Snippets
         {'L3MON4D3/LuaSnip'},
         {'rafamadriz/friendly-snippets'},
+
+        {'nvimtools/none-ls.nvim'},
+        {'nvim-lua/plenary.nvim'},
+        {'jay-babu/mason-null-ls.nvim'},
     },
 
     config = function()
@@ -50,6 +54,29 @@ return {
                 lsp_zero.default_setup,
             }
         })
+
+        require('mason-null-ls').setup({
+            ensure_installed = {
+                'black',
+                'isort',
+                'prettier',
+            },
+            automatic_installation = true,
+        })
+
+        local null_ls = require('null-ls')
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.isort,
+                null_ls.builtins.formatting.prettier,
+            },
+            timeout_ms = 5000
+        })
+
+        vim.api.nvim_create_user_command('Format', function()
+            vim.lsp.buf.format()
+        end, { desc = 'Format current buffer' })
 
         -- Completion setup
         local cmp = require('cmp')
