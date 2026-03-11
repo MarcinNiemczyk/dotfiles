@@ -27,4 +27,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = ""
+vim.opt.guicursor = "n-v-i-c:block"
 
