@@ -7,6 +7,7 @@ return {
     local _99 = require("99")
 
     _99.setup({
+      model = "openai/gpt-5.5",
       tmp_dir = "./tmp",
       md_files = { "AGENT.md" },
       completion = {
