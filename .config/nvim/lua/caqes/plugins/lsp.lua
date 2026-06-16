@@ -46,7 +46,8 @@ return {
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
-                'basedpyright',
+                'pyrefly',
+                'ruff',
                 'ts_ls',
                 'lua_ls',
             },
@@ -57,8 +58,6 @@ return {
 
         require('mason-null-ls').setup({
             ensure_installed = {
-                'black',
-                'isort',
                 'prettier',
             },
             automatic_installation = true,
@@ -67,8 +66,6 @@ return {
         local null_ls = require('null-ls')
         null_ls.setup({
             sources = {
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.isort,
                 null_ls.builtins.formatting.prettier,
             },
             timeout_ms = 5000
@@ -107,4 +104,3 @@ return {
         })
     end
 }
-
