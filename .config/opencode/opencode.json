@@ -16,6 +16,7 @@
     }
   },
   "plugin": [
-    "@mohak34/opencode-notifier@latest"
+    "@mohak34/opencode-notifier@latest",
+    "opencode-claude-auth@latest"
   ]
 }
