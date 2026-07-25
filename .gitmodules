@@ -1,0 +1,3 @@
+[submodule ".config/opencode"]
+	path = .config/opencode
+	url = https://github.com/MarcinNiemczyk/opencode.git
