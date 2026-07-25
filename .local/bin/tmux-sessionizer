@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 
-session=$(find ~ ~/projects -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(
+    {
+        find ~ ~/projects -mindepth 1 -maxdepth 1 -type d
+
+        git -C ~/app worktree list --porcelain 2>/dev/null | awk '
+            /^worktree /{ path = $2; bare = 0 }
+            /^bare$/    { bare = 1 }
+            /^$/        { if (path && !bare) print path; path = "" }
+            END         { if (path && !bare) print path }
+        '
+    } | awk 'NF && !seen[$0]++' | fzf
+)
+
+[ -z "$session" ] && exit 0
+
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then
